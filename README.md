@@ -42,7 +42,7 @@ $records = $porter->import(new ImportSpecification(new MyResource));
 Provider resources, such as `MyResource`, specify the `Provider` class name they work with. Imports will only work when a resource's provider has been added to Porter, otherwise `ProviderNotFoundException` is thrown. To find which provider `MyResource` requires we examine its `getProviderClassName` method, which returns `MyProvider::class`, in this case. In the following example we register `MyProvider` with Porter.
 
 ```php
-$porter = (new Porter)->addProvider(new MyProvider);
+$porter = (new Porter)->registerProvider(new MyProvider);
 ```
 
 Calling `import()` returns an instance of `PorterRecords`, which implements `Iterator`, allowing us to enumerate each record in the collection using `foreach` as in the following example.
@@ -344,7 +344,7 @@ Porter is published under the open source GNU Lesser General Public License v3.0
 
 
   [Releases]: https://github.com/ScriptFUSION/Porter/releases
-  [Version image]: https://poser.pugx.org/scriptfusion/porter/v/stable "Latest version"
+  [Version image]: https://poser.pugx.org/scriptfusion/porter/version "Latest version"
   [Downloads]: https://packagist.org/packages/scriptfusion/porter
   [Downloads image]: https://poser.pugx.org/scriptfusion/porter/downloads "Total downloads"
   [Build]: http://travis-ci.org/ScriptFUSION/Porter
